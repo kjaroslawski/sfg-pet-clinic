@@ -1,11 +1,11 @@
 package pl.qamar.sfgpetclinic.services.map;
 
 import pl.qamar.sfgpetclinic.model.Owner;
-import pl.qamar.sfgpetclinic.services.CrudService;
+import pl.qamar.sfgpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -31,4 +31,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     public void deleteById(Long id) {
         super.deleteById(id);
     }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
+
 }
