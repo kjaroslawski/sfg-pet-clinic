@@ -1,10 +1,12 @@
 package pl.qamar.sfgpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import pl.qamar.sfgpetclinic.model.Vet;
 import pl.qamar.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
