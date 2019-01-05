@@ -3,18 +3,18 @@ package pl.qamar.sfgpetclinic.services.map;
 import org.springframework.stereotype.Service;
 import pl.qamar.sfgpetclinic.model.Speciality;
 import pl.qamar.sfgpetclinic.model.Vet;
-import pl.qamar.sfgpetclinic.services.SpecialityService;
+import pl.qamar.sfgpetclinic.services.SpecialtyService;
 import pl.qamar.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
-    private final SpecialityService specialityService;
+    private final SpecialtyService specialtyService;
 
-    public VetServiceMap(SpecialityService specialityService) {
-        this.specialityService = specialityService;
+    public VetMapService(SpecialtyService specialtyService) {
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
         if (vet.getSpecialities().size() > 0) {
             vet.getSpecialities().forEach(speciality -> {
                 if (speciality.getId() == null) {
-                    Speciality savedSpeciality = specialityService.save(speciality);
+                    Speciality savedSpeciality = specialtyService.save(speciality);
                     speciality.setId(savedSpeciality.getId());
                 }
             });

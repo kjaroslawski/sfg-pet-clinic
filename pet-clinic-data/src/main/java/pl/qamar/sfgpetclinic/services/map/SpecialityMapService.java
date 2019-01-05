@@ -2,12 +2,12 @@ package pl.qamar.sfgpetclinic.services.map;
 
 import org.springframework.stereotype.Service;
 import pl.qamar.sfgpetclinic.model.Speciality;
-import pl.qamar.sfgpetclinic.services.SpecialityService;
+import pl.qamar.sfgpetclinic.services.SpecialtyService;
 
 import java.util.Set;
 
 @Service
-public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
+public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialtyService {
 
     @Override
     public Set<Speciality> findAll() {
