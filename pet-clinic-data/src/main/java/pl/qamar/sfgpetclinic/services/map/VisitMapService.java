@@ -1,5 +1,6 @@
 package pl.qamar.sfgpetclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import pl.qamar.sfgpetclinic.model.Visit;
 import pl.qamar.sfgpetclinic.services.VisitService;
@@ -7,6 +8,7 @@ import pl.qamar.sfgpetclinic.services.VisitService;
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
 
