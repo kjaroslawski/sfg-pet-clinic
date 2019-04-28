@@ -8,6 +8,7 @@ import pl.qamar.sfgpetclinic.services.OwnerService;
 import pl.qamar.sfgpetclinic.services.PetService;
 import pl.qamar.sfgpetclinic.services.PetTypeService;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -75,4 +76,8 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                 .orElse(null);
     }
 
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return null;
+    }
 }
