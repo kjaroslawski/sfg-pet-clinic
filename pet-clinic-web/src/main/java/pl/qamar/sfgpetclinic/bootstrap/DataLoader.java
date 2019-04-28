@@ -3,8 +3,17 @@ package pl.qamar.sfgpetclinic.bootstrap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pl.qamar.sfgpetclinic.model.*;
-import pl.qamar.sfgpetclinic.services.*;
+import pl.qamar.sfgpetclinic.model.Owner;
+import pl.qamar.sfgpetclinic.model.Pet;
+import pl.qamar.sfgpetclinic.model.PetType;
+import pl.qamar.sfgpetclinic.model.Speciality;
+import pl.qamar.sfgpetclinic.model.Vet;
+import pl.qamar.sfgpetclinic.model.Visit;
+import pl.qamar.sfgpetclinic.services.OwnerService;
+import pl.qamar.sfgpetclinic.services.PetTypeService;
+import pl.qamar.sfgpetclinic.services.SpecialtyService;
+import pl.qamar.sfgpetclinic.services.VetService;
+import pl.qamar.sfgpetclinic.services.VisitService;
 
 import java.time.LocalDate;
 
@@ -41,7 +50,7 @@ public class DataLoader implements CommandLineRunner {
         PetType savedDogPetType = petTypeService.save(dog);
 
         PetType cat = new PetType();
-        dog.setName("Cat");
+        cat.setName("Cat");
         PetType savedCatPetType = petTypeService.save(cat);
 
         Speciality radiology = new Speciality();
